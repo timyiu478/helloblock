@@ -2,9 +2,13 @@
 
 from web3 import Web3
 from eth_abi import decode
+import os
+from dotenv import load_dotenv
+
+ETHEREUM_NETWORK = os.getenv("ETHEREUM_NETWORK")
 
 # Connect to the Ethereum network
-web3 = Web3(Web3.HTTPProvider('PLACE_HOLDER'))
+web3 = Web3(Web3.HTTPProvider(ETHEREUM_NETWORK))
 
 # Function signature for SayHello()
 function_signature = "SayHello()"
